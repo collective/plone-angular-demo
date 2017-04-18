@@ -1,0 +1,6 @@
+<ul class="list-group">
+  <li *ngFor="let link of links" class="list-group-item" [ngClass]="{'active-link': link.active}">
+    <a [traverseTo]="link.properties['@id']">{{ link.properties.title }}</a>
+    <plone-navigation-level [links]="link.children" *ngIf="link.children"></plone-navigation-level>
+  </li>
+</ul>
